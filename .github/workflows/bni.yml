@@ -19,15 +19,15 @@ jobs:
       with:
         python-version: 3.10
 
-    - name: Install libraries
+    - name: Install dependencies
       run: |
         pip install -r requirements.txt
 
-    - name: Install Playwright
+    - name: Install Playwright browsers
       run: |
         pip install playwright
-        playwright install
+        playwright install --with-deps
 
-    - name: Run script
+    - name: Run BNI scraper
       run: |
         python bni_scraper.py
